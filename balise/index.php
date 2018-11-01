@@ -4,9 +4,11 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <script type="text/javascript" charset="utf8" src="../jquery.dataTables.js"></script>
+
 		<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 		<style>
 			body
 			{
@@ -50,8 +52,8 @@
 				<a href"" id="Ajouter" data-toggle="modal" data-target="#userModal"><img src="../add.png" height="50" width="50"><a/>
 
 
-			<a  href="../balise/baliseExport.php"><img src="../images.jpg" height="50" width="50"><a/>
-					<a  href="../balise/baliseExport.php"><img src="../print.png" height="50" width="50"><a/>
+			<a  href="../balise/baliseExport.php"><img src="../ex.png" height="50" width="50"><a/>
+					<a  href="../balise/baliseExport.php"><img src="../prin.png" height="50" width="50"><a/>
 			</center>
 				</div>
 				<br /><br />
@@ -83,6 +85,9 @@
 </html>
 
 <div id="userModal" class="modal fade">
+
+
+
 	<div class="modal-dialog">
 		<form method="post" id="user_form" enctype="multipart/form-data">
 			<div class="modal-content">
@@ -157,7 +162,7 @@ $(document).ready(function(){
 		},
 		"columnDefs":[
 			{
-				"targets":[0, 4, 5, 6],
+				"targets":[0, 10, 11, 12],
 				"orderable":false,
 			},
 		],

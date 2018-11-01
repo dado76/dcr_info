@@ -30,7 +30,7 @@
       <?php
 
 
-  
+
 
       $sql4 = "SELECT * FROM carte_sims WHERE navigation='OUI'";
       $req4 = $bdd->prepare($sql4);
@@ -46,7 +46,7 @@
       $array5 = $req5->fetchALL();
       $nbRFID = count($array4);
       ?>
-    <div class="w3-container w3-third">
+    <div class="w3-container w3-third"> 
       <h5 class="w3-bottombar w3-border-blue">Bilan Géolocalisation</h5>
       <td><i class="fa fa-database w3-text-blue w3-large"></i></td>
       <td>Etat de la base donnée.</td>

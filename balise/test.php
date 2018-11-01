@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script type="text/javascript" charset="utf8" src="js.js"></script>
   <?php    include("../auth.php");  ?>
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
@@ -62,7 +63,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5><b><i class="fa fa-dashboard"></i> Tableau de bord</b></h5>
   </header>
 
-  <div class="w3-row-padding w3-margin-bottom">
+  <div class="w3-row-padding w3-margin-bottom" style="				border:1px solid #ccc;
+        margin:15px;	border-radius:5px; padding:15px;   margin-top:35px;">
     <?php include("../1.php")?>
 <?php include("../2.php")?>
     <div class="w3-quarter" style="float:right">
@@ -78,6 +80,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <h4>Nombre de Balise</h4>
       </div>
     </div>
+  </div>
 
 
   <div class="w3-panel">
@@ -114,7 +117,40 @@ function w3_close() {
     overlayBg.style.display = "none";
 }
 </script>
+<script>
+$(document).ready(function(){
+   $('td').each(function(){
+        if ($(this).text() == 'REFORME') {
+            $(this).css('background-color','#F5A9A9');
+        }
+    });
+});
 
+
+$(document).ready(function(){
+   $('td').each(function(){
+        if ($(this).text() == 'EN SERVICE') {
+            $(this).css('background-color','#CEF6CE');
+        }
+    });
+});
+
+$(document).ready(function(){
+   $('td').each(function(){
+        if ($(this).text() == 'EN STOCK') {
+            $(this).css('background-color','#F6E3CE');
+        }
+    });
+});
+
+$(document).ready(function(){
+   $('td').each(function(){
+        if ($(this).text() == 'HS') {
+            $(this).css('background-color','#F5A9A9');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
