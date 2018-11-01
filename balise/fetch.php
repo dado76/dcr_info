@@ -8,14 +8,7 @@ if(isset($_POST["search"]["value"]))
 {
 	$query .= 'WHERE codification LIKE "%'.$_POST["search"]["value"].'%" ';
 	$query .= 'OR balise LIKE "%'.$_POST["search"]["value"].'%" ';
-		$query .= 'OR telephone LIKE "%'.$_POST["search"]["value"].'%" ';
-			$query .= 'OR sim LIKE "%'.$_POST["search"]["value"].'%" ';
-					$query .= 'OR idport LIKE "%'.$_POST["search"]["value"].'%" ';
-					$query .= 'OR immatriculation LIKE "%'.$_POST["search"]["value"].'%" ';
-						$query .= 'OR statut LIKE "%'.$_POST["search"]["value"].'%" ';
-								$query .= 'OR rfid LIKE "%'.$_POST["search"]["value"].'%" ';
-											$query .= 'OR navigation LIKE "%'.$_POST["search"]["value"].'%" ';
-														$query .= 'OR origin LIKE "%'.$_POST["search"]["value"].'%" ';
+													$query .= 'OR origin LIKE "%'.$_POST["search"]["value"].'%" ';
 }
 if(isset($_POST["order"]))
 {
