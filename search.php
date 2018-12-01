@@ -4,11 +4,6 @@
 	<meta charset="utf-8">
 	<title>PHP CRUD Operation using PDO with Bootstrap/Modal</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
-
 </head>
 <body>
 <div class="container">
@@ -16,7 +11,7 @@
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2">
 		
-
+			<a href="#addnew" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> New</a>
             <?php
                 session_start();
                 if(isset($_SESSION['message'])){
@@ -30,16 +25,14 @@
                 }
             ?>
 	<form action ="" method="post">
-	<?php
-$type= 'Dates';	
-	$today= date("Y-m-d");
-	$now= date("Y-m-d");
-echo  ' Date :';
+	<?php		
+
+
       $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
     $bdd = new PDO('mysql:host=localhost;dbname=dcr_info', 'root', '', $pdo_options);
     try{
 
-    $sql1 = "SELECT DISTINCT Dates FROM anomalie_tripratik ORDER BY Dates";
+    $sql1 = "SELECT DISTINCT Adresse FROM anomalie_tripratik ORDER BY Adresse";
     $prepare = $bdd->prepare($sql1);
     $prepare->execute();
     //on stocke le résultat de la requête dans un array
@@ -51,45 +44,36 @@ echo  ' Date :';
     <?php
     Error_reporting(0);
     // pour faire un menu déroulant présenter les différentes rubriques
-    echo "<select name='Dates' onChange='FocusObjet()'>";
+    echo "<select name='Adresse' onChange='FocusObjet()'>";
     echo "<OPTION SELECTED VALUE='201%'>TOUS</OPTION>";
 
 
     foreach($arrListe as $L) {
-       $rbp = $L['Dates'];
+       $rbp = $L['Adresse'];
        echo "<OPTION VALUE='$rbp'> $rbp </OPTION>\n";
     }
     echo "</select>";
-    $today= $_POST['Dates'];
+    $today= $_POST['Adresse'];
 
 
     ?>
 
     </input>
+	<input type = "submit" value = "Envoyer">
 
-	<input class="btn btn-primary"  type = "submit" value = "Chercher">
-			<a href="#addnew" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span>Ajouter</a>
 	</form>
-
 	<?php 
 
-if (isset($Adr))
-	{
- $sql = "SELECT * FROM anomalie_tripratik WHERE Dates LIKE '$today' ORDER BY '$type' ";	
-}
-else {
 
- $sql = "SELECT * FROM anomalie_tripratik WHERE Dates LIKE '$today' ORDER BY Dates ";	
-	};
-
+   $sql = "SELECT * FROM anomalie_tripratik WHERE Adresse LIKE '$today' ORDER BY Adresse ";	
 	
-	?><script src="jquery.min.js"></script>
-			<table class="table table-bordered table-striped" id="example" style="margin-top:20px;">
+	?>
+			<table class="table table-bordered table-striped" style="margin-top:20px;">
 				<thead>
-				<th>ID</th>
+					<th>ID</th>
 					<th>Date</th>
 					<th>Commune</th>
-					<th>Adresse</th>
+					<th>Addresse</th>
 					<th>OM</th>
 					<th>CS</th>
 					<th>BIO</th>
@@ -108,15 +92,15 @@ else {
 						    	?>
 						    	<tr>
 						    		<td><?php echo $row['id']; ?></td>
-						    		<td><?php echo $row['Dates']; ?></td>
+						    		<td><?php echo $row['Adresse']; ?></td>
 						    		<td><?php echo $row['Commune']; ?></td>
 						    		<td><?php echo $row['Adresse']; ?></td>
 									<td><?php echo $row['OM']; ?></td>
 						    		<td><?php echo $row['CS']; ?></td>
 						    		<td><?php echo $row['BIO']; ?></td>
 						    		<td>
-						    			<a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span>Modifier</a>
-						    			<a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span>Supprimer</a>
+						    			<a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+						    			<a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> Delete</a>
 						    		</td>
 						    		<?php include('edit_delete_modal.php'); ?>
 						    	</tr>

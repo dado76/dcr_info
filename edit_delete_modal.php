@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <center><h4 class="modal-title" id="myModalLabel">Edit Member</h4></center>
+                <center><h4 class="modal-title" id="myModalLabel"></h4></center>
             </div>
             <div class="modal-body">
 			<div class="container-fluid">
@@ -14,7 +14,7 @@
 						<label class="control-label" style="position:relative; top:7px;">Dates:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="Dates" value="<?php echo $row['Dates']; ?>">
+						<input type="date" class="form-control" name="Dates" value="<?php echo $row['Dates']; ?>">
 					</div>
 				</div>
 				<div class="row form-group">
@@ -54,14 +54,15 @@
 						<label class="control-label" style="position:relative; top:7px;">BIO:</label>
 					</div>
 					<div class="col-sm-10">
+					
 						<input type="text" class="form-control" name="BIO" value="<?php echo $row['BIO']; ?>">
 					</div>
 				</div>
             </div> 
 			</div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                <button type="submit" name="edit" class="btn btn-success"><span class="glyphicon glyphicon-check"></span> Update</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Annuler</button>
+                <button type="submit" name="edit" class="btn btn-success"><span class="glyphicon glyphicon-check"></span>Modifier</a>
 			</form>
             </div>
  
@@ -75,15 +76,15 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <center><h4 class="modal-title" id="myModalLabel">Delete Member</h4></center>
+                <center><h4 class="modal-title" id="myModalLabel"></h4></center>
             </div>
             <div class="modal-body">	
-            	<p class="text-center">Are you sure you want to Delete</p>
+            	<p class="text-center">Etes vous sur de vouloir supprimer l'enregistrement ?</p>
 				<h2 class="text-center"><?php echo $row['Dates'].' '.$row['Adresse']; ?></h2>
 			</div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Annuler</button>
+                <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>Valider</a>
             </div>
  
         </div>

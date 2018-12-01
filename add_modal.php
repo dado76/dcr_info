@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <center><h4 class="modal-title" id="myModalLabel">Add New</h4></center>
+                <center><h4 class="modal-title" id="myModalLabel"></h4></center>
             </div>
             <div class="modal-body">
 			<div class="container-fluid">
@@ -14,7 +14,7 @@
 						<label class="control-label" style="position:relative; top:7px;">Dates:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="date" class="form-control" name="Dates">
+						<input type="date" class="form-control" name="Dates" value="<?php echo $now;?>">
 					</div>
 				</div>
 				<div class="row form-group">
@@ -38,7 +38,8 @@
 						<label class="control-label" style="position:relative; top:7px;">OM:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="OM">
+									<select type="text" class="form-control" name="OM"><option>OUI </option><option>NON </option>
+						</select>
 					</div>
 				</div>
 								<div class="row form-group">
@@ -46,7 +47,10 @@
 						<label class="control-label" style="position:relative; top:7px;">CS:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="CS">
+					
+						<select type="text" class="form-control" name="CS"><option>OUI </option><option>NON </option>
+						</select>
+			
 					</div>
 				</div>
 								<div class="row form-group">
@@ -54,14 +58,15 @@
 						<label class="control-label" style="position:relative; top:7px;">BIO:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="BIO">
+								<select type="text" class="form-control" name="BIO"><option>OUI </option><option>NON </option>
+						</select>
 					</div>
 				</div>
             </div> 
 			</div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                <button type="submit" name="add" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Annuler</button>
+                <button type="submit" name="add" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span>Ajouter</a>
 			</form>
             </div>
  

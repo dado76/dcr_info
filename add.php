@@ -21,7 +21,7 @@
 	}
  
 	else{
-		$_SESSION['message'] = 'Fill up add form first';
+		$_SESSION['message'] = "Remplir les champs d'abors";
 	}
  
 	header('location: index.php');
